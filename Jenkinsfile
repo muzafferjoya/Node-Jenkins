@@ -27,6 +27,14 @@ pipeline {
                   sh 'npm run build'
       }
     }
+              stage('Deploy Artifacts to S3 Bucket'){
+                pwd();
+                withAWS(region: 'us-east-1', credentials: 'aws-id'){
+                  def identity=awsIdentity();
+                  s3Upload(bucket: "muzaffar-node", workingDir: './dist', includePathPattern: '**/*', excludePathPattern: '.git/*', excludePathPattern: 'node_modules/*');
+                }
+
+              };
   }
 }
 }
