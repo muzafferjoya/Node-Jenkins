@@ -27,7 +27,7 @@ node {
 
         def identity=awsIdentity();
 		
-	s3Upload(bucket:"muzaffar-node", workingDir:'dist', includePathPattern:'**/*', excludePathPattern:'.git/*, node_modules/*', metadatas: ["repo:${env.JOB_NAME}", "branch:${env.BRANCH}", "commit:${env.GIT_COMMIT}"]);
+	s3Upload(bucket:"muzaffar-node", workingDir:'dist', includePathPattern:'**/*', excludePathPattern:'.git/*, node_modules/*');
                  
         }
 
