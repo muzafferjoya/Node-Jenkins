@@ -34,7 +34,7 @@ node {
 
         def identity=awsIdentity();
 		
-		s3Upload(bucket: "muzaffar-node", workingDir: '.', includePathPattern:'**/*', excludePathPattern:'.git/*', excludePathPattern: 'node_modules/*');
+	s3Upload(bucket: "muzaffar-node", workingDir: '.', includePathPattern:'**/*', excludePathPattern: '.git/*', 'node_modules/*');
                  
         }
 
