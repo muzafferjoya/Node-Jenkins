@@ -1,7 +1,9 @@
 pipeline {
 
 agent any
-    
+	
+stages{
+		
     stage('Git clone'){
         git 'https://github.com/muzafferjoya/Node-Jenkins.git'
     }
@@ -35,5 +37,6 @@ agent any
 
         };
 
+	}
 	}
 }
