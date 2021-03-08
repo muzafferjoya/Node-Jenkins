@@ -1,4 +1,6 @@
-node {
+pipeline {
+
+agent any
     
     stage('Git clone'){
         git 'https://github.com/muzafferjoya/Node-Jenkins.git'
@@ -19,7 +21,7 @@ node {
     
     stage('Deploy To S3 Bucket') {
 
-        dir('/var/lib/jenkins/workspace/build-node'){
+        dir('/var/lib/jenkins/workspace/node-jenkins'){
 
         pwd(); 
 
